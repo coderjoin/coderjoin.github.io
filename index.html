@@ -359,6 +359,69 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/12/《深入理解jvm》总结/" >
+            
+                <span>《深入理解jvm》总结</span>
+        </a>
+        <div class="abstract-content">
+            运行时内存区域
+方法区（线程共享）
+堆（线程共享）
+虚拟机栈 (线程私有)
+本地方法栈（线程私有）
+程序计数器 （线程私有）
+
+
+垃圾收集器判断对象是否能回收
+引用计数法
+可达性分析
+gc roots对象（虚拟机栈中引用的对象、方法区中类静态属性引用的对象、方法区中常量引用的对象、本地方法栈中JNI引用的对象）
+
+
+
+垃圾收集算法
+标记清除算法
+优点：最基础，问题：效率问题，内存碎片
+
+
+复制算法
+解决效率，新生代收集算法
+
+
+标记整理算法
+解决老年代对象成活率较高的问题，复制算法不适合
+
+
+分代回收算法
+新生代复制算法，老年代标记清除和标记整理算法
+
+
+
+垃圾收集器
+Serial收集器...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "jvm">jvm</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/03/06/Java-web总结/" >
             
                 <span>Java web总结</span>
@@ -614,9 +677,16 @@ checked...
     
     
     
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 2
+        Total : 3
         </div>
         <!-- search  -->
         
@@ -632,6 +702,11 @@ checked...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">03/12</span><a class="archive-post-title" href= "/2019/03/12/《深入理解jvm》总结/" >《深入理解jvm》总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">03/06</span><a class="archive-post-title" href= "/2019/03/06/Java-web总结/" >Java web总结</a>
         </li>
     
@@ -644,6 +719,8 @@ checked...
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="jvm"><span class="iconfont-archer">&#xe606;</span>jvm</span>
     
         <span class="sidebar-tag-name" data-tags="Java Web"><span class="iconfont-archer">&#xe606;</span>Java Web</span>
     
