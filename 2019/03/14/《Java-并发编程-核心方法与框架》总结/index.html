@@ -22,7 +22,7 @@
     <meta name="description" content="努力并不一定为了赢">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>coderjoin&#39;s blog</title>
+    <title>《Java 并发编程 核心方法与框架》总结 · coderjoin&#39;s blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >coderjoin&#39;s blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">《Java 并发编程 核心方法与框架》总结</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>coderjoin's blog.</a>
 </header>
@@ -220,24 +231,69 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            《Java 并发编程 核心方法与框架》总结
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "并发编程">并发编程</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">670</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/03/14</span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,81 +394,105 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/14/《Java-并发编程-核心方法与框架》总结/" >
-            
-                <span>《Java 并发编程 核心方法与框架》总结</span>
-        </a>
-        <div class="abstract-content">
-            Semaphore
-信号量实现多生产者多消费者
-可以限制并发执行任务的线程数量
-semaphore.acquire()、semaphore.release()
+            <main class="main post-page">
+    <article class="article-entry">
+        <h4 id="Semaphore"><a href="#Semaphore" class="headerlink" title="Semaphore"></a>Semaphore</h4><ul>
+<li>信号量实现多生产者多消费者</li>
+<li>可以限制并发执行任务的线程数量</li>
+<li>semaphore.acquire()、semaphore.release()</li>
+</ul>
+<h4 id="Exchanger"><a href="#Exchanger" class="headerlink" title="Exchanger"></a>Exchanger</h4><ul>
+<li>两个线程间传输数据，exchange()方法</li>
+</ul>
+<h4 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h4><ul>
+<li>减法操作，不可重用，计数不为0，线程呈阻塞状态</li>
+<li>一个线程或者多个线程，等待另外一个线程或者多个线程完成某个事情之后才能继续进行。</li>
+</ul>
+<h4 id="CyclicBarrier"><a href="#CyclicBarrier" class="headerlink" title="CyclicBarrier"></a>CyclicBarrier</h4><ul>
+<li>加法操作</li>
+<li>多个线程之间相互等待，“多个线程之间”任何一个线程没有完成任务，则所有的线程都必须等待。</li>
+</ul>
+<h4 id="Phaser"><a href="#Phaser" class="headerlink" title="Phaser"></a>Phaser</h4><ul>
+<li>类Phaser提供了动态增减parties计数，通过若干个方法来控制多个线程之间同步运行的效果，还可以实现针对某一个线程取消同步运行的效果，而且支持在指定屏障处等待，在等待时还支持中断或非中断等功能。</li>
+</ul>
+<h4 id="Executor与ThreadPoolExecutor"><a href="#Executor与ThreadPoolExecutor" class="headerlink" title="Executor与ThreadPoolExecutor"></a>Executor与ThreadPoolExecutor</h4><ul>
+<li>Executor接口，Executors工厂类</li>
+<li>newCachedThreadPool()  无界线程池，理论最大值Integer.MAX_VALUE</li>
+<li>newFixedThreadPool(int ) 有界线程池</li>
+<li>newSingleThreadExecutor 单一线程池</li>
+<li>newScheduledThreadPool(int) 定长线程池</li>
+<li>类ThreadPoolExecutor最常用的构造方法：ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<runnable> workQueue)<ul>
+<li>corePoolSize：核心池大小</li>
+<li>maximunPoolSize：池中允许的最大线程数</li>
+<li>keepAliveTime：当线程数量大于corePoolSize值时，在没有超过指定的时间内是不从线程池中将空闲线程删除的，如果超过此时间单位，则删除。</li>
+<li>unit ：keepAliveTime参数的时间单位</li>
+<li>workQueue：执行前用与保持任务的队列<h4 id="线程池ThreadPoolExecutor的拒绝策略"><a href="#线程池ThreadPoolExecutor的拒绝策略" class="headerlink" title="线程池ThreadPoolExecutor的拒绝策略"></a>线程池ThreadPoolExecutor的拒绝策略</h4></li>
+</ul>
+</runnable></li>
+<li>AbortPolicy：当任务添加到线程池中被拒绝时，抛出RejectedExecutionException异常</li>
+<li>CallerRunsPolicy：当任务添加到线程池中被拒绝时，会使用调用线程池的Thread线程对象处理被拒绝的任务</li>
+<li>DiscardOldestPolicy：当任务添加到线程池中被拒绝时，线程池会放弃等待队列中最旧的未处理任务，然后将被拒绝的任务添加到等待队列中</li>
+<li>DiscardPolicy：当任务添加到线程池中被拒绝时，线程池将丢弃被拒绝的任务</li>
+</ul>
+<h4 id="ScheduledExecutorService"><a href="#ScheduledExecutorService" class="headerlink" title="ScheduledExecutorService"></a>ScheduledExecutorService</h4><ul>
+<li>将定时任务与线程池功能结合使用</li>
+</ul>
+<h4 id="Fork-join分治框架"><a href="#Fork-join分治框架" class="headerlink" title="Fork-join分治框架"></a>Fork-join分治框架</h4><h4 id="并发集合框架"><a href="#并发集合框架" class="headerlink" title="并发集合框架"></a>并发集合框架</h4><ul>
+<li>7个非阻塞队列<ul>
+<li>ConcurrentHashMap   不支持排序</li>
+<li>ConsurrentSkipListMap   支持排序</li>
+<li>ConsurrentSkipListSet  支持排序而且不允许重复元素</li>
+<li>ConcurrentLinkedQueue   并发队列操作 ，仅支持对列头操作</li>
+<li>ConcurrentLinkedDeque  列头列尾双向操作</li>
+<li>CopyOnWriteArrayList </li>
+<li>CopyOnWriteArraySet</li>
+</ul>
+</li>
+<li>阻塞队列<ul>
+<li>ArrayBlockingQueue</li>
+<li>PriorityBlockingQueue</li>
+<li>LinkedBlockingQueue</li>
+<li>LinkedBlockingDeque</li>
+<li>SynchronousQueue</li>
+<li>DelayQueue</li>
+<li>LinkedTransferQueue</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>个人读完感觉有点像工具书的感觉，不过对并发框架罗列的比较好，有些example还是要自己手写写，可以仔细读读</p>
 
-Exchanger
-两个线程间传输数据，exchange()方法
-
-CountDownLatch
-减法操作，不可重用，计数不为0，线程呈阻塞状态
-一个线程或者多个线程，等待另外一个线程或者多个线程完成某个事情之后才能继续进行。
-
-CyclicBarrier
-加法操作
-多个线程之间相互等待，“多个线程之间”任何一个线程没有完成任务，则所有的线程都必须等待。
-
-Phaser
-类Phaser提供了动态增减parties计数，通过若干个...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "并发编程">并发编程</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/13/手撸系列（一）——生产者消费者模式/" >
-            
-                <span>手撸系列（一）——生产者消费者模式</span>
-        </a>
-        <div class="abstract-content">
-            手撸系列（一）——生产者消费者模式最近看到实验室老师一门课的一个lab：手写生产者消费者模式，突然想起来自己以前也曾经写过，写一篇blog来总结回忆一下生产者消费者模式的三种实现方式。
-
-方式一：synchronized、wait 和 notify1234567891011121314151617181920212223242526272829303132333435363738394041package one;public class Resource &#123;    private int num = 0;    private int size = 10;    public...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/03/13/手撸系列（一）——生产者消费者模式/" title= "手撸系列（一）——生产者消费者模式">
+                    <div class="prevTitle">手撸系列（一）——生产者消费者模式</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -662,6 +742,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
