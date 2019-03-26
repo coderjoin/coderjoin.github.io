@@ -22,7 +22,7 @@
     <meta name="description" content="努力并不一定为了赢">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>coderjoin&#39;s blog</title>
+    <title>进程、线程、协程（阿里二面） · coderjoin&#39;s blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >coderjoin&#39;s blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">进程、线程、协程（阿里二面）</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>coderjoin's blog.</a>
 </header>
@@ -220,24 +231,69 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            进程、线程、协程（阿里二面）
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "面试">面试</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">679</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/03/26</span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,41 +394,57 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/13/手撸系列（一）——生产者消费者模式/" >
-            
-                <span>手撸系列（一）——生产者消费者模式</span>
-        </a>
-        <div class="abstract-content">
-            手撸系列（一）——生产者消费者模式最近看到实验室老师一门课的一个lab：手写生产者消费者模式，突然想起来自己以前也曾经写过，写一篇blog来总结回忆一下生产者消费者模式的三种实现方式。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h4 id="进程、线程和协程的区别（阿里二面回忆总结思考篇）"><a href="#进程、线程和协程的区别（阿里二面回忆总结思考篇）" class="headerlink" title="进程、线程和协程的区别（阿里二面回忆总结思考篇）"></a>进程、线程和协程的区别（阿里二面回忆总结思考篇）</h4><p>傍晚，突然接到阿里的面试官打来的电话，聊了20多分钟，中间觉得有些知识点还是值得自己去慢慢梳理。面试的整体流程体验感觉不错，面试官人也比较好。</p>
+<h5 id="聊项目"><a href="#聊项目" class="headerlink" title="聊项目"></a>聊项目</h5><p>这里就不细说了，中间提到用了thrift，如何实现跨语言，当时回答编写的IDL文件，thrift编译为中间语言。面试官问这就能实习跨语言了？然后补充了定义了自己的协议格式。问dubbo和thrift的优缺点，谈谈你自己的看法，这点自己梳理下，围绕分布式和跨语言说下</p>
+<h5 id="项目说用到多线程"><a href="#项目说用到多线程" class="headerlink" title="项目说用到多线程"></a>项目说用到多线程</h5><h6 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h6><p>当时心想知道这个东西，如何用准确的语言组织好还是挺难的，当时回答，进程是程序的实例，一个进程可以有多个线程，线程是执行任务的最小单位。面试官的意思好像把进程和程序的范畴联系在一起有点不妥，说你知道nginx吧，一个多进程的程序，这个怎么理解。。。然后问学过操作系统吗？这就有点压力了啊。。。。然后提到多线程</p>
+<h6 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h6><ul>
+<li>就答了轻量级的线程，让手写一个协程需要哪些库。。。。没准备到</li>
+</ul>
+<h6 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h6><ul>
+<li>这个准备下基本上也能回答上来，当时回答了new、runnable、running、blocked、wait、time_wait这些。</li>
+<li>thread调用sleep()进入什么状态。（想着阿里的选择题里面有个好像就是阻塞状态）当时回答进入block状态，为什么，线程调用就sleep，时间到了就自己唤醒自己</li>
+<li>线程调用interrupt()进入什么状态，没敢准确回答，当时想的就是中断线程，然后聊jstack查看线程状态，。。。</li>
+<li>面试官最后解释了一个wait状态，但是听着怎么像是在解释sleep之后进入wait状态，提到监视器，但是怎么感觉再说sleep()和wait()方法的监视器使用权问题，最后有点没太听清楚</li>
+<li>感觉线程的五种状态和六种状态的分法还是不一样，五种状态中的阻塞状态应该为大类，没有wait状态，感觉好像被这状态的分类给坑了。</li>
+<li>最后跟一张线程详细的状态的转化图<br><img src="/images/2019-03-26-15-33-07.jpg" alt=""></li>
+<li>问什么时候毕业，投了哪些公司。</li>
+<li>没给问问题的机会就说结束了，线程状态问了10几分钟，感觉有点难。。。。。。。。</li>
+<li>果然二面不匹配（凉凉）。。。。。。</li>
+</ul>
 
-方式一：synchronized、wait 和 notify1234567891011121314151617181920212223242526272829303132333435363738394041package one;public class Resource &#123;    private int num = 0;    private int size = 10;    public...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "线程通信">线程通信</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/03/26/jdk自带调试工具（阿里一面）/" title= "jdk自带调试工具（阿里一面）">
+                    <div class="prevTitle">jdk自带调试工具（阿里一面）</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -680,6 +752,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

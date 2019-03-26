@@ -346,25 +346,70 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/13/手撸系列（一）——生产者消费者模式/" >
+        <a class="abstract-title" href = "/2019/03/26/进程、线程、协程（阿里二面）/" >
             
-                <span>手撸系列（一）——生产者消费者模式</span>
+                <span>进程、线程、协程（阿里二面）</span>
         </a>
         <div class="abstract-content">
-            手撸系列（一）——生产者消费者模式最近看到实验室老师一门课的一个lab：手写生产者消费者模式，突然想起来自己以前也曾经写过，写一篇blog来总结回忆一下生产者消费者模式的三种实现方式。
-
-方式一：synchronized、wait 和 notify1234567891011121314151617181920212223242526272829303132333435363738394041package one;public class Resource &#123;    private int num = 0;    private int size = 10;    public...
+            进程、线程和协程的区别（阿里二面回忆总结思考篇）傍晚，突然接到阿里的面试官打来的电话，聊了20多分钟，中间觉得有些知识点还是值得自己去慢慢梳理。面试的整体流程体验感觉不错，面试官人也比较好。
+聊项目这里就不细说了，中间提到用了thrift，如何实现跨语言，当时回答编写的IDL文件，thrift编译为中间语言。面试官问这就能实习跨语言了？然后补充了定义了自己的协议格式。问dubbo和thrift的优缺点，谈谈你自己的看法，这点自己梳理下，围绕分布式和跨语言说下
+项目说用到多线程进程和线程的区别当时心想知道这个东西，如何用准确的语言组织好还是挺难的，当时回答，进程是程序的实例，一个进程可以有...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/13</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/26</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "线程通信">线程通信</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "面试">面试</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/26/jdk自带调试工具（阿里一面）/" >
+            
+                <span>jdk自带调试工具（阿里一面）</span>
+        </a>
+        <div class="abstract-content">
+            jdk自带的调试工具（阿里一面回忆总结思考篇）聊项目问了下dubbo的优缺点，实现的原理。
+Java基础
+Java类加载机制
+bootstrap classloader
+extension classloader
+application classloader
+
+
+双亲委托模型的安全性加载问题
+
+oom分析
+当时我只是看了《深入理解虚拟机》，自己当时动手实操的也只用过jstack分析过线程池内的线程状态。对于oom，只知道jmap dump出内存文件，然后怎么分析dump出的文件就没实操过了。总共聊了20分钟，面试官问你还有什么想问，就结束了。
+
+jdk自带的调试工具
+jps 查看Jav...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "jvm">jvm</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "面试">面试</a>
     
 </div>
             

@@ -22,7 +22,7 @@
     <meta name="description" content="努力并不一定为了赢">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>coderjoin&#39;s blog</title>
+    <title>jdk自带调试工具（阿里一面） · coderjoin&#39;s blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >coderjoin&#39;s blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">jdk自带调试工具（阿里一面）</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>coderjoin's blog.</a>
 </header>
@@ -220,24 +231,71 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            jdk自带调试工具（阿里一面）
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "jvm">jvm</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "面试">面试</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">232</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/03/26</span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,41 +396,68 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/03/13/手撸系列（一）——生产者消费者模式/" >
-            
-                <span>手撸系列（一）——生产者消费者模式</span>
-        </a>
-        <div class="abstract-content">
-            手撸系列（一）——生产者消费者模式最近看到实验室老师一门课的一个lab：手写生产者消费者模式，突然想起来自己以前也曾经写过，写一篇blog来总结回忆一下生产者消费者模式的三种实现方式。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="jdk自带的调试工具（阿里一面回忆总结思考篇）"><a href="#jdk自带的调试工具（阿里一面回忆总结思考篇）" class="headerlink" title="jdk自带的调试工具（阿里一面回忆总结思考篇）"></a>jdk自带的调试工具（阿里一面回忆总结思考篇）</h2><h4 id="聊项目"><a href="#聊项目" class="headerlink" title="聊项目"></a>聊项目</h4><p>问了下dubbo的优缺点，实现的原理。</p>
+<h4 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h4><ul>
+<li>Java类加载机制<ul>
+<li>bootstrap classloader</li>
+<li>extension classloader</li>
+<li>application classloader</li>
+</ul>
+</li>
+<li>双亲委托模型的安全性加载问题</li>
+</ul>
+<h4 id="oom分析"><a href="#oom分析" class="headerlink" title="oom分析"></a>oom分析</h4><ul>
+<li>当时我只是看了《深入理解虚拟机》，自己当时动手实操的也只用过jstack分析过线程池内的线程状态。对于oom，只知道jmap dump出内存文件，然后怎么分析dump出的文件就没实操过了。总共聊了20分钟，面试官问你还有什么想问，就结束了。</li>
+</ul>
+<h4 id="jdk自带的调试工具"><a href="#jdk自带的调试工具" class="headerlink" title="jdk自带的调试工具"></a>jdk自带的调试工具</h4><ul>
+<li>jps 查看Java进程</li>
+<li>jstat 查看虚拟机运行时信息</li>
+<li>jinfo 查看虚拟机参数</li>
+<li>jmap 导出堆到文件</li>
+<li>jhat JDK自带的堆分析工具</li>
+<li>jstack 查看线程堆栈</li>
+<li>jstatd 远程主机信息收集</li>
+<li>jcmd 多功能命令行</li>
+</ul>
 
-方式一：synchronized、wait 和 notify1234567891011121314151617181920212223242526272829303132333435363738394041package one;public class Resource &#123;    private int num = 0;    private int size = 10;    public...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "线程通信">线程通信</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/03/26/进程、线程、协程（阿里二面）/" title= "进程、线程、协程（阿里二面）">
+                    <div class="nextTitle">进程、线程、协程（阿里二面）</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/03/16/手撸系列（二）——-单例模式/" title= "手撸系列（二）—— 单例模式">
+                    <div class="prevTitle">手撸系列（二）—— 单例模式</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -680,6 +765,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
